@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background: blue;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<script>
+try {
+  var div = document.createElement('<div id="box">Hello World</div>')
+  document.body.appendChild(div)
+} catch (err) {
+
+}
+</script>
+</body>
+</html>

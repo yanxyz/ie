@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  <script>
+    try {
+      // document.body 为 null, 因为还没解析到 <body>
+      alert(document.body.tagName)
+    } catch (err) {
+      // pass
+    }
+
+    window.onload = function () {
+      // 可以访问，因为 load 事件是在页面加载完成后发生
+      alert(document.body.tagName)
+    }
+  </script>
+</head>
+<body>
+<script>
+  // 可以访问，因为已经解析到 <body>
+  alert(document.body.lastChild.nodeType)
+</script>
+</body>
+</html>
+
+<select name="" id="">
+  <option value="" selected=""></option>
+  <option value=""></option>
+</select>

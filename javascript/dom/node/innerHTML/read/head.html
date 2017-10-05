@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>test innerHTML</title>
+  <style>
+    p {
+      color: red;
+      /* font-size: 16px; */
+    }
+  </style>
+</head>
+<body>
+  <textarea name="" id="log" cols="60" rows="15"></textarea>
+
+<script>
+window.onload = function () {
+  var el = document.getElementsByTagName('head')[0]
+  document.getElementById('log').value = el.innerHTML
+}
+
+</script>
+</body>
+</html>
+

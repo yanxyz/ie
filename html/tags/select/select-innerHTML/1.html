@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+<body>
+	<select id="days" name="days">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3" selected="selected">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	</select>
+	<input type="button" id="update" value="Update" />
+	<p>option length: <span id="len"></span></p>
+	<script>
+		// http://tangobean.com/notes/ie%E4%B8%8Bselect-innerhtml%E7%9A%84%E9%97%AE%E9%A2%98/
+		// IE<10 select 不支持 innerHTML
+		var select = document.getElementById('days')
+		var len = document.getElementById('len')
+		len.innerHTML = select.options.length
+
+		document.getElementById('update').onclick = function() {
+			var select = document.getElementById('days')
+			select.innerHTML = '<option value="0">0</option>'
+			len.innerHTML = select.options.length
+			this.onclick = null
+		}
+
+	</script>
+</body>
+</html>

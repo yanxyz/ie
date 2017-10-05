@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+  <h1>top frame</h1>
+  <p><button type="button" id="btn">Click me</button></p>
+  <h3>diffent origin</h3>
+  <iframe src="http://b.com/index.html" name="f1"></iframe>
+  <h3>same origin</h3>
+  <iframe src="other.html" name="f2"></iframe>
+<script>
+document.getElementById('btn').onclick = function (event) {
+  event = event || window.event
+  window.frames['f1'].postMessage({
+    text: 'hello from top frame'
+  }, '*')
+}
+
+window.onmessage = function (event) {
+  event = event || window.event
+  console.log({
+    origin: event.origin,
+    source: event.source,
+    data: event.data
+  })
+}
+</script>
+</body>
+</html>

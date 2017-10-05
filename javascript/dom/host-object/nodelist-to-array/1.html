@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <ul>
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+  </ul>
+<script>
+var items = document.getElementsByTagName('li')
+var arr = Array.prototype.slice.call(items)
+alert(arr.length)  //3
+</script>
+</body>
+</html>

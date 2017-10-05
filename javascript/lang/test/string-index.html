@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+
+<pre>
+// IE < 8 string[index] 返回 undefined
+var str = 'abcdefg'
+str[2] // 'c'
+<span id="output"></span>
+</pre>
+
+<script>
+var str = 'abcdefg'
+var char = str[2]
+document.getElementById('output').innerText = char ? "'" + char + "'" : char
+</script>
+
+</body>
+</html>

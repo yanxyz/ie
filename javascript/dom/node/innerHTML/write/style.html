@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <div id="container"></div>
+<script type="x-template" id="template">
+<p>Lorem ipsum dolor sit amet.</p>
+<style>
+p {
+  color: red
+}
+</style>
+</script>
+<script>
+window.onload = function () {
+  document.getElementById('container').innerHTML = document.getElementById('template').text
+}
+</script>
+</body>
+</html>

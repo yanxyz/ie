@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+<script>
+function test () {
+  var fn = 'Date(1971, 3, 8)'
+  var date
+  var indirectEval = eval
+  indirectEval('date = new ' + fn)
+  alert(date)
+}
+
+test()
+</script>
+</body>
+</html>

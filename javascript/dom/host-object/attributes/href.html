@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <p><a href="test/1.html" id="a">Link</a></p>
+  <textarea id="log" cols="100" rows="15"></textarea>
+
+<script>
+var a = document.getElementById('a')
+log('HTML')
+
+a.href = 'test/2.html'
+log(".href = 'test/2.html'")
+
+a.setAttribute('href', 'test/3.html')
+log(".setAttribute('href', 'test/3.html')")
+
+function log (msg) {
+  var arr = [
+    '### ' + msg,
+    '.href: ' + a.href,
+    '.getAttribute("href"): ' + a.getAttribute('href'),
+    '\n'
+  ]
+  document.getElementById('log').value += arr.join('\n')
+}
+</script>
+</body>
+</html>

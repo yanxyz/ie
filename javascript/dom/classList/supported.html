@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    .yes, .no {
+      padding: 0 5px;
+      color: white;
+    }
+    .yes {
+      background: green;
+    }
+    .no {
+      background: red;
+    }
+  </style>
+</head>
+<body>
+
+<h1>classList</h1>
+<div id="result"></div>
+
+<script>
+run()
+
+function run () {
+  body = document.body
+
+  if (!body.classList) {
+    document.getElementById('result').innerHTML = '<p class="no">classList is not supported</p>'
+    return
+  }
+
+  var body = document.body
+  var tests = [
+    test('add(className)', function () {
+      body.classList.add('a')
+      return body.className === 'a'
+    }),
+    test('add(className1, ...)', function () {
+      body.className = ''
+      body.classList.add('a', 'b')
+      return body.className === 'a b'
+    }),
+    test('remove(className)', function () {
+      body.className = 'a'
+      body.classList.remove('a')
+      return body.className === ''
+    }),
+    test('remove(className1, ...)', function () {
+      body.className = 'a b'
+      body.classList.remove('a', 'b')
+      return body.className === ''
+    }),
+    test('toggle(className)', function () {
+      body.className = 'a'
+      body.classList.toggle('a')
+      body.classList.toggle('b')
+      return body.className === 'b'
+    }),
+    test('toggle(className, force)', function () {
+      body.className = ''
+      body.classList.toggle('a', false)
+      return body.className === ''
+    }),
+    test('SVGElement.classList', function () {
+      return 'classList' in document.createElementNS('http://www.w3.org/2000/svg', 'g')
+    })
+  ]
+
+  document.getElementById('result').innerHTML = tests.join('')
+}
+
+function test (description, callback) {
+  return '<p><span class="description">' + description + '</span>: ' +
+    (callback() ? '<span class="yes">Y</span>' : '<span class="no">N</span>') +
+    '</p>'
+}
+</script>
+</body>
+</html>

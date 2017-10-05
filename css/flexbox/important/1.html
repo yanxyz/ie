@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='UTF-8'>
+  <link rel="canonical" href="http://codepen.io/philipwalton/pen/ZbRoYw" />
+<style class="cp-pen-styles">/**
+ * Flexbug demo 13.1.a (bug)
+ */
+
+.FlexContainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1em;
+}
+
+.FlexItemImportantOverride {
+  -webkit-box-flex: 0!important;
+  -webkit-flex: 0 0 100%!important;
+      -ms-flex: 0 0 100%!important;
+          flex: 0 0 100%!important;
+}
+
+.FlexItem {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.FlexItem p {
+  background: hsla(0,0%,0%,.1);
+  padding: 1em;
+  margin: 1em;
+}
+</style>
+</head>
+<body>
+  <div class="FlexContainer">
+    <div class="FlexItem FlexItemImportantOverride">
+      <p>I should be full width</p>
+    </div>
+  </div>
+</body>
+</html>

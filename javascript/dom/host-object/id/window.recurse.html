@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+<script>
+// recurse is explicitly defined on the outer window
+// stack overflow error
+window.recurse = function(times) {
+  if (times !== 0) recurse(times-1)
+}
+
+recurse(13)
+</script>
+
+</body>
+</html>

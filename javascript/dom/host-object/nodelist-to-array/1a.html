@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <ul>
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+  </ul>
+<script>
+var items = document.getElementsByTagName('li')
+var arr = convertToArray(items)
+alert(arr.length)  //3
+
+function convertToArray (nodes) {
+  var arr
+  try {
+    arr = Array.prototype.slice.call(nodes)
+  } catch (err) {
+    arr = []
+    for (var i = 0, len = nodes.length; i < len; i++) {
+      arr.push(nodes[i])
+    }
+  }
+  return arr
+}
+</script>
+</body>
+</html>

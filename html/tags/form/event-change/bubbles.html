@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  <style>
+    form {
+      margin: 1em 0;
+    }
+  </style>
+</head>
+<body>
+<textarea name="" id="log" cols="60" rows="10" readonly=""></textarea>
+
+<form id="form">
+  <label for="color">color:</label>
+  <select name="" id="color" tabindex="1">
+    <option value="">请选择</option>
+    <option value="r">red</option>
+    <option value="g">green</option>
+    <option value="b">blue</option>
+  </select>
+</form>
+
+<script>
+$('color').onchange = handler
+$('form').onchange = handler
+document.body.onchange = handler
+document.onchange = handler
+window.onchange = handler
+
+function handler () {
+  if (this.id === 'color') {
+    $('log').value = ''
+  }
+  $('log').value += this + '\n'
+}
+
+function $ (id) {
+  return document.getElementById(id)
+}
+</script>
+</body>
+</html>

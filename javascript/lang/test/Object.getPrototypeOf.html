@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+
+<script>
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf
+
+function test() {
+  if (typeof Object.getPrototypeOf !== 'function') {
+    alert('Object.getPrototypeOf is not supported')
+    return
+  }
+
+  try {
+    console.log(Object.getPrototypeOf('foo'))
+  } catch (err) {
+    alert(err)
+    console.error(err)
+  }
+}
+
+test()
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <h1>select change</h1>
+  <p>改变选项时触发 change 事件。</p>
+  <ul>
+    <li>鼠标操作，单击 select 打开选项列表，单击选项确定选项。</li>
+    <li>键盘操作，tab 聚焦后，方向键可以改变选项。space 打开选项列表，这时方向键选择选项，enter 确定选项。</li>
+  </ul>
+  <textarea name="" id="log" cols="" rows="10" readonly=""></textarea>
+
+  <p>
+    <label for="color">color:</label>
+    <select name="" id="color" tabindex="1">
+      <option value="">请选择</option>
+      <option value="r">red</option>
+      <option value="g">green</option>
+      <option value="b">blue</option>
+    </select>
+  </p>
+<script>
+$('color').onchange = function () {
+  $('log').value = [
+    'this.value: ' + this.value
+  ].join('\n')
+}
+
+function $ (id) {
+  return document.getElementById(id)
+}
+
+</script>
+</body>
+</html>

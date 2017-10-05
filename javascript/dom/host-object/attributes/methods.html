@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body id="blog">
+<textarea name="" id="log" cols="100" rows="10"></textarea>
+
+<script>
+window.onload = log
+
+function log () {
+  var node = document.body
+  var arr = []
+
+  var result = false
+  try {
+    result = node.hasAttribute('id') === true
+  } catch (err) {
+    // false
+  }
+  arr.push('.hasAttribute: ' + result)
+
+  arr.push('.getAttribute(): ' + (node.getAttribute('id') === 'blog'))
+
+  node.setAttribute('id', 'entry')
+  arr.push('.setAttribute(): ' + (node.getAttribute('id') === 'entry'))
+
+  node.removeAttribute('id')
+  arr.push('.removeAttribute(): ' + (node.getAttribute('id') === null))
+
+  $('log').value = arr.join('\n')
+}
+
+function $ (id) {
+  return document.getElementById(id)
+}
+</script>
+</body>
+</html>

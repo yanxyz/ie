@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+<div id="box"></div>
+<script>
+// Works in IE8 and earlier versions
+// Doesn’t work in IE9 or other browsers
+var cachedGetElementById = document.getElementById
+try {
+  cachedGetElementById('box')
+} catch (err) {
+  cachedGetElementById.call(document, 'box')
+}
+</script>
+</body>
+</html>

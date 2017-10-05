@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+<body>
+
+<p><a href="404.html">链接1</a></p>
+
+<script>
+(function () {
+  var p = document.createElement('p')
+  p.innerHTML = '<a href="404.html">动态插入的链接</a>'
+  document.body.appendChild(p)
+
+  var els = document.getElementsByTagName('a')
+  console.log(els)
+  for (var i = 0; i < els.length; i++) {
+    log(els[i])
+  }
+
+  function log(a) {
+    var pre = document.createElement('pre')
+    pre.innerText = [
+      '.href: ' + quote(a.href),
+      ".getAttribute('href'): " + quote(a.getAttribute('href')),
+      ".getAttribute('href'): " + quote(a.getAttribute('href', 2))
+    ].join('\n')
+    a.parentNode.appendChild(pre)
+  }
+
+  function quote(value) {
+    return typeof value === 'string' ? '"' + value + '"' : value
+  }
+})()
+</script>
+</body>
+</html>

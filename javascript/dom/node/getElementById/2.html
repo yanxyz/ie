@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+<body>
+	<p id="aTest">text</p>
+	<div id="result"></div>
+	<script>
+		// IE<8 不区分 id 大小写
+		var elem = document.getElementById('atest')
+		document.getElementById('result').innerHTML = elem.tagName
+	</script>
+</body>
+</html>

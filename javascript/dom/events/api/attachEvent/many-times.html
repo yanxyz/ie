@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+
+<button type="button" id="btn">click me</button>
+
+<script>
+(function () {
+var btn = document.getElementById('btn')
+if (!btn.attachEvent) return
+btn.attachEvent('onclick', onClick)
+btn.attachEvent('onclick', onClick)
+btn.attachEvent('onclick', onClick)
+
+function onClick() {
+  alert('hi')
+}
+})()
+</script>
+</body>
+</html>

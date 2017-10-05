@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <p><button id="btn">click me</button></p>
+  <textarea name="" id="log" cols="60" rows="10" spellcheck="false"></textarea>
+<script>
+window.onload = function () {
+  $('log').value = ''
+}
+
+$('btn').onclick = function (event) {
+  $('log').value = [
+    'this: ' + this,
+    'event: ' + event,
+    'window.event: ' + window.event
+  ].join('\n')
+}
+
+function $ (id) {
+  return document.getElementById(id)
+}
+</script>
+</body>
+</html>

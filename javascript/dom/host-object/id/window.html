@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <textarea id="log" cols="100" rows="15"></textarea>
+
+<script>
+window.onload = log
+
+function log (msg) {
+  var arr = [
+    'window === window.window ' + (window === window.window),
+    'window.window === window.window.window ' + (window.window === window.window.window)
+  ]
+  document.getElementById('log').value = arr.join('\n')
+}
+</script>
+</body>
+</html>

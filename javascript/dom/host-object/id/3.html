@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+<body>
+	<div id="test"></div>
+	<script type="text/javascript">
+		// console.log(test)
+		// 似乎浏览器都可以对 DOM 节点的 id 直接引用
+		// 但是下面一句 ie6-8 报错： 对象不支持此属性或方法
+		test = 1;
+	</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+<style>
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8em;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.25em 0.5em;
+}
+
+.yes, .no, .ver {
+  text-align: center;
+}
+
+.yes {
+  color: #44ab44;
+}
+
+.no {
+  color: #e11;
+}
+
+tr:hover {
+  background: #eee;
+}
+
+</style>
+</head>
+<body>
+  <h1>Mouse Events key</h1>
+  <ul>
+    <li>兼容性考虑 Chrome 50, Firefox 45, Safari 9, Edge 13, IE 8。</li>
+    <li>Safari 没有实际测试，并不准确。</li>
+    <li><a href="../test/">测试</a></li>
+  </ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Chrome</th>
+        <th>Firefox</th>
+        <th>Safari</th>
+        <th>Edge</th>
+        <th>IE</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+<tr>
+  <td>code</td>
+  <td>按键标识符，唯一且不变，不受键盘布局等影响。</td>
+  <td class="yes">Yes</td>
+  <td class="yes">Yes</td>
+  <td class="yes">Yes</td>
+  <td class="no">No</td>
+  <td class="no">No</td>
+</tr>
+
+
+<tr>
+  <td>key</td>
+  <td>按键名字。</td>
+  <td class="yes">Yes</td>
+  <td class="yes">Yes</td>
+  <td class="yes">Yes</td>
+  <td class="yes">Yes</td>
+  <td class="yes">9</td>
+</tr>
+
+
+<tr>
+  <td>keyCode</td>
+  <td>与 key 类似，不过值是一个数字。</td>
+  <td class="yes">Yes</td>
+  <td class="yes">Yes</td>
+  <td class="yes">Yes</td>
+  <td class="yes">Yes</td>
+  <td class="yes">Yes</td>
+</tr>
+
+
+<tr>
+  <td>keyIdentifier</td>
+  <td>被 key 取代。</td>
+  <td class="yes">Yes</td>
+  <td class="no">No</td>
+  <td class="yes">Yes</td>
+  <td class="no">No</td>
+  <td class="no">No</td>
+</tr>
+
+
+<tr>
+  <td>char</td>
+  <td>keypress 事件输入字符，char 是此字符。</td>
+  <td class="yes">Yes</td>
+  <td class="no">No</td>
+  <td class="yes">Yes</td>
+  <td class="yes">Yes</td>
+  <td class="yes">9</td>
+</tr>
+
+
+<tr>
+  <td>charCode</td>
+  <td>keypress 事件输入字符，charCode 是此字符的 code point。keydown, keyup 值是 0。</td>
+  <td class="yes">Yes</td>
+  <td class="yes">Yes</td>
+  <td class="yes">Yes</td>
+  <td class="yes">Yes</td>
+  <td class="yes">9</td>
+</tr>
+
+
+<tr>
+  <td>which</td>
+  <td>多数情况下等于 keyCode。</td>
+  <td class="yes">Yes</td>
+  <td class="yes">Yes</td>
+  <td class="yes">Yes</td>
+  <td class="yes">Yes</td>
+  <td class="yes">9</td>
+</tr>
+
+    </tbody>
+  </table>
+</body>
+</html>

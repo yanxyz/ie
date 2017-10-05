@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+  <h1>top frame</h1>
+  <p>diffrent origin: <button type="button" id="btn">Open new window</button></p>
+  <p>same origin: <button type="button" id="btn2">Open new window</button></p>
+<script>
+document.getElementById('btn').onclick = function (event) {
+  event = event || window.event
+  window.open('http://b.com')
+}
+
+document.getElementById('btn2').onclick = function (event) {
+  event = event || window.event
+  window.open('new.html')
+}
+
+window.onmessage = function (event) {
+  event = event || window.event
+  console.log({
+    origin: event.origin,
+    source: event.source,
+    data: event.data
+  })
+
+  var p = document.createElement('p')
+  p.innerText = event.data
+  document.body.appendChild(p)
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+<body>
+	<input type="text" name="test" id="" value="input" />
+	<p id="test">text</p>
+
+	<div id="result"></div>
+	<script>
+		// IE<8 如果 id 之前出现同名的表单控件，则返回此表单控件
+		var elem = document.getElementById('test')
+		document.getElementById('result').innerHTML = elem.tagName
+	</script>
+</body>
+</html>

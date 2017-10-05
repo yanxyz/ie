@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+
+  <p>
+    <label for="s">color:</label>
+    <select name="" id="s">
+      <option id="red">red</option>
+      <option name="green">green</option>
+      <option id="blue">blue</option>
+    </select>
+  </p>
+  <textarea name="" id="log" cols="100" rows="10" spellcheck="false"></textarea>
+
+<script>
+var select = document.getElementById('s')
+select.onchange = function () {
+  log(select)
+}
+
+log(select)
+
+function log(select) {
+  var arr = [
+    'supports select.namedItem(id): ' + (select.namedItem('red') !== null),
+    'supports select.namedItem(name): ' + (select.namedItem('green') !== null)
+  ]
+  document.getElementById('log').value = arr.join('\n')
+}
+</script>
+
+</body>
+</html>

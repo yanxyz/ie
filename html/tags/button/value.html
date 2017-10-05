@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+
+<h2>value="test"</h2>
+<form action="server.php" method="post">
+  <button type="submit" name="btn1" id="btn1" value="test">
+    submit <b style="color: red">this</b> form
+  </button>
+</form>
+
+<h2>no value</h2>
+<form action="server.php" method="post">
+  <button type="submit" name="btn2" id="btn2">
+    submit <b style="color: red">this</b> form
+  </button>
+</form>
+
+<script>
+function log (id) {
+  var btn = document.getElementById(id)
+  var p = document.createElement('p')
+  p.innerText = btn.id + '.value: ' + btn.value
+  btn.form.appendChild(p)
+}
+
+for (var i = 1; i <= 2; i++) {
+  log('btn' + i)
+}
+</script>
+
+</body>
+</html>

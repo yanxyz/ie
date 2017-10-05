@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+<form action="" id="form">
+  <input name="email" />
+  <input name="email" />
+  <input name="email" />
+</form>
+<script>
+alert(document.getElementsByName('email').length)
+
+var firstChild = document.getElementsByName('email')[0]
+document.getElementById('form').removeChild(firstChild)
+alert(document.getElementsByName('email').length)
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <div id="box"></div>
+<script>
+var box = document.getElementById('box')
+box.innerHTML = '  <p></p>'
+alert(box.firstChild.nodeType) // 应该是 3
+</script>
+</body>
+</html>

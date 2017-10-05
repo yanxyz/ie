@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+
+  <h2>no type</h2>
+  <form action="server.php" method="post">
+    <button name="btn1" id="btn1" value="btn1">submit</button>
+  </form>
+
+  <h2>type=""</h2>
+  <form action="server.php" method="post">
+    <button type="" name="btn2" id="btn2" value="btn2">submit</button>
+  </form>
+
+  <h2>type="invalid value"</h2>
+  <form action="server.php" method="post">
+    <button type="invalid value" name="btn3" id="btn3" value="btn3">submit</button>
+  </form>
+
+  <h2>type="submit"</h2>
+  <form action="server.php" method="post">
+    <button type="submit" name="btn4" id="btn4" value="btn4">submit</button>
+  </form>
+
+  <h2>type="button"</h2>
+  <form action="server.php" method="post">
+    <button type="button" name="btn5" id="btn5" value="btn5">button</button>
+  </form>
+
+  <h2>type="reset"</h2>
+  <form action="server.php" method="post">
+    <button type="reset" name="btn6" id="btn6" value="btn6">reset</button>
+  </form>
+
+<script>
+function log (id) {
+  var btn = document.getElementById(id)
+  var p = document.createElement('p')
+  if (btn.type !== btn.innerText) {
+    p.style.color = 'red'
+  }
+  p.innerHTML = [
+    'button.type: ' + btn.type,
+    'button.value: ' + btn.value
+  ].join('<br>')
+
+  btn.form.appendChild(p)
+}
+
+for (var i = 1; i <= 6; i++) {
+  log('btn' + i)
+}
+</script>
+
+</body>
+</html>

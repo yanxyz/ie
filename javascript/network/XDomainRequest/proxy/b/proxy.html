@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+<button id="btn">Send parent a postMessage directly</button>
+<script src="script.js"></script>
+<script>
+document.getElementById('btn').onclick = function () {
+  parent.postMessage('Message From Inside','*')
+}
+</script>
+</body>
+</html>

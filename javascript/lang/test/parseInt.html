@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+<textarea name="" id="log" cols="30" rows="10"></textarea>
+
+<script>
+window.onload = function log () {
+  var arr = [
+    "Number('010'): " + Number('010'),
+    "parseInt('010'): " + parseInt('010'),
+    "parseInt('010', 10): " + parseInt('010', 10),
+    "parseFloat('010'): " + parseFloat('010')
+  ]
+
+  document.getElementById('log').value = arr.join('\n')
+}
+</script>
+</body>
+</html>

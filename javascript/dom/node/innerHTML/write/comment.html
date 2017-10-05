@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+  <h2>Test 1</h2>
+  <ul id="list">
+    <li>item one</li>
+    <li>item two</li>
+    <li>item three</li>
+  </ul>
+  <textarea name="" id="log" cols="30" rows="10"></textarea>
+
+<script type="x-template" id="template">
+  <li>item one</li>
+  <!-- <li>item two</li> -->
+  <li>item three</li>
+</script>
+
+<script>
+window.onload = function () {
+  var el = document.getElementById('list')
+  el.innerHTML = document.getElementById('template').text
+  document.getElementById('log').value = el.innerHTML
+}
+
+</script>
+</body>
+</html>

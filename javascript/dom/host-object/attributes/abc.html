@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<body>
+<textarea name="" id="log" cols="100" rows="15"></textarea>
+
+<script>
+window.onload = function () {
+  var body = document.body
+  body.setAttribute('ABC', 11)
+  body.setAttribute('Abc', 22)
+
+  log(body)
+}
+
+function log (node) {
+  var arr = [
+    '.setAttribute("ABC", 11)',
+    '.setAttribute("Abc", 22)',
+    '',
+    '.attributes.length: ' + node.attributes.length,
+    '.ABC: ' + node.ABC,
+    '.Abc: ' + node.Abc,
+    '.abc: ' + node.abc,
+    '.getAttribute("ABC"): ' + node.getAttribute('ABC'),
+    '.getAttribute("Abc"): ' + node.getAttribute('Abc'),
+    '.getAttribute("abc"): ' + node.getAttribute('abc'),
+    '.getAttribute("ABC", 1): ' + node.getAttribute('ABC', 1),
+    '.getAttribute("Abc", 1): ' + node.getAttribute('Abc', 1),
+    '.getAttribute("abc", 1): ' + node.getAttribute('abc', 1),
+    '\n'
+  ]
+  $('log').value = arr.join('\n')
+}
+
+function $ (id) {
+  return document.getElementById(id)
+}
+</script>
+</body>
+</html>
